@@ -1,0 +1,32 @@
+{
+  user,
+  plaform,
+  host,
+  lib,
+  config,
+  pkgs,
+  inputs,
+  modulesPath,
+  ...
+}:
+{
+  imports = [
+    ./basic.nix
+    ./boot.nix
+    ./greetd.nix
+    ./hardware.nix
+    ./i18n.nix
+    ./kernel.nix
+    ./keyboard.nix
+    ./network.nix
+    ./nixmgr.nix
+    ./pipewire.nix
+    ./time.nix
+    ./user.nix
+    ./uwsm.nix
+    ./zram.nix
+    ./nixpkgs.nix
+    ./power.nix
+  ];
+  system.autoUpgrade.enable = true;
+}
