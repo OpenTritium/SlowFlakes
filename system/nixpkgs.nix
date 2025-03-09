@@ -2,7 +2,10 @@
 {
   nixpkgs = {
     hostPlatform = platform;
-    config.allowUnfree = true;
+    config = {
+      allowUnfree = true;
+      android_sdk.accept_license = true;
+    };
     overlays = [
       (_: _: {
         hyprland = inputs.hyprland.packages.${platform}.hyprland;

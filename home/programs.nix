@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, user, ... }:
 {
   programs = {
     bash.initExtra = ''
@@ -13,6 +13,15 @@
     zed-editor = {
       enable = true;
       extensions = [ "nix" ];
+      userSettings = {
+        lsp = {
+          rust-analyzer = {
+            binary = {
+              path = "/etc/profiles/per-user/${user}/bin/rust-analyzer";
+            };
+          };
+        };
+      };
     };
     hyprpanel = {
       enable = true;
@@ -75,11 +84,31 @@
     gh.enable = true;
     vscode = {
       enable = true;
-      profiles.default.extensions = with pkgs.vscode-extensions; [
-        github.copilot-chat
-        jnoortheen.nix-ide
-        ms-python.python
-      ];
+      profiles.default = {
+        extensions = with pkgs.vscode-extensions; [
+          github.copilot-chat
+          jnoortheen.nix-ide
+          ms-python.python
+        ];
+        userSettings = {
+          "editor.formatOnSave" = true;
+          "editor.formatOnPaste" = true;
+          "editor.formatOnType" = true;
+          "editor.tabSize" = 2;
+          "editor.wordWrap" = "on";
+          "editor.wordWrapColumn" = 80;
+          "editor.wordWrapMinified" = true;
+          "editor.wordWrapUseTab" = true;
+          "editor.rulers" = [ 80 ];
+          "editor.renderControlCharacters" = true;
+          "editor.renderLineHighlight" = "all";
+          "editor.renderLineHighlightBackground" = "#000000";
+          "editor.renderLineHighlightOnlyWhenFocus" = true;
+          "editor.renderValidationDecorations" = "on";
+          "editor.renderIndentGuides" = true;
+          "editor.renderWhitespace" = "all";
+        };
+      };
     };
     firefox.enable = true;
     home-manager.enable = true;

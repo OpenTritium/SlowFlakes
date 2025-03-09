@@ -10,29 +10,22 @@
         "QT_QPA_PLATFORM,wayland"
         "DISABLE_QT5_COMPACT,0"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-
         "GDK_BACKEND,wayland"
         "GDK_SCALE,1"
-
         "WLR_BACKEND,vulkan"
         "WLR_RENDERER,vulkan"
-
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XDG_SESSION_DESKTOP,Hyprland"
         "XDG_SESSION_TYPE,wayland"
-
         "SDL_VIDEODRIVER,waland"
-
         "CLUTTER_BACKEND,wayland"
-
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
-
         "NIXOS_OZONE_WL,1"
-
         "XCURSOR_SIZE,32"
       ];
       exec-once = [
         #"swww img /home/tritium/bgs" # todo
+        "fcitx5 --replace -d"
         "systemctl --user start hyprpolkitagent.services"
       ];
 

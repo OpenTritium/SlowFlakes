@@ -10,7 +10,7 @@
     username = user;
     homeDirectory = lib.mkDefault "/home/${user}";
     packages = with pkgs; [
-      android-studio
+      android-studio-full
       btop
       nixfmt-rfc-style
       jetbrains.idea-ultimate
