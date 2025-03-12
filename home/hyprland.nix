@@ -10,6 +10,10 @@
         "QT_QPA_PLATFORM,wayland"
         "DISABLE_QT5_COMPACT,0"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+        "QT_AUTO_SCREEN_SCALE_FACTOR,1"
+        "QT_ENABLE_HIGHDPI_SCALING,1"
+        #"QT_SCALE_FACTOR,2"
+        #"QT_FONT_DPI,192" # for wps
         "GDK_BACKEND,wayland"
         "GDK_SCALE,1"
         "WLR_BACKEND,vulkan"
@@ -22,6 +26,11 @@
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
         "NIXOS_OZONE_WL,1"
         "XCURSOR_SIZE,32"
+        "GTK_IM_MODULE,fcitx"
+        "QT_IM_MODULE,fcitx"
+        "GLFW_IM_MODULE,ibus"
+        "SDL_IM_MODULE,fcitx"
+        "XMODIFIERS=@im,fcitx"
       ];
       exec-once = [
         #"swww img /home/tritium/bgs" # todo
@@ -73,6 +82,7 @@
           "$mod and SHIFT, F, fullscreen"
           "$mod, Q, killactive"
           "$mod, R, exec, wofi --normal-window --term kitty --show run"
+          "$mod, B, exec, chromium"
         ]
         ++ (builtins.concatLists (
           builtins.genList (

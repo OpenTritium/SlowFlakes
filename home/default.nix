@@ -3,6 +3,8 @@
   lib,
   user,
   stateVersion,
+  inputs,
+  platform,
   ...
 }:
 {
@@ -14,8 +16,6 @@
       btop
       nixfmt-rfc-style
       jetbrains.idea-ultimate
-      wpsoffice-cn
-      clash-nyanpasu
       jdk
       qq
       fastfetch
@@ -26,6 +26,11 @@
       hyprpolkitagent
       rustup
       nixd
+      wpsoffice-cn
+      inputs.wpsFonts.packages.${platform}.default
+      qbittorrent-enhanced
+      inputs.windows-fonts.packages.${platform}.win11Fonts
+      parsec-bin
     ];
     inherit stateVersion;
   };

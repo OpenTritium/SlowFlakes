@@ -11,6 +11,8 @@
 }:
 {
   imports = [
+    ./nixpkgs.nix
+    ./nixmgr.nix
     ./basic.nix
     ./boot.nix
     ./greetd.nix
@@ -19,13 +21,11 @@
     ./kernel.nix
     ./keyboard.nix
     ./network.nix
-    ./nixmgr.nix
     ./pipewire.nix
     ./time.nix
     ./user.nix
     ./uwsm.nix
     ./zram.nix
-    ./nixpkgs.nix
     ./power.nix
   ];
   system.autoUpgrade.enable = true;

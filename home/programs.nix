@@ -88,7 +88,6 @@
         extensions = with pkgs.vscode-extensions; [
           github.copilot-chat
           jnoortheen.nix-ide
-          ms-python.python
         ];
         userSettings = {
           "editor.formatOnSave" = true;
@@ -97,20 +96,14 @@
           "editor.tabSize" = 2;
           "editor.wordWrap" = "on";
           "editor.wordWrapColumn" = 80;
-          "editor.wordWrapMinified" = true;
-          "editor.wordWrapUseTab" = true;
           "editor.rulers" = [ 80 ];
           "editor.renderControlCharacters" = true;
-          "editor.renderLineHighlight" = "all";
-          "editor.renderLineHighlightBackground" = "#000000";
           "editor.renderLineHighlightOnlyWhenFocus" = true;
-          "editor.renderValidationDecorations" = "on";
           "editor.renderIndentGuides" = true;
           "editor.renderWhitespace" = "all";
         };
       };
     };
-    firefox.enable = true;
     home-manager.enable = true;
   };
 }

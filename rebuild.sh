@@ -1,1 +1,2 @@
-sudo nixos-rebuild switch --flake ../SnowFlakes --show-trace --fast
+export NIXPKGS_ALLOW_UNFREE=1
+nixos-rebuild switch --impure --flake /home/tritium/SnowFlakes --show-trace --fast

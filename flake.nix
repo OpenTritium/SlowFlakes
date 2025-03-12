@@ -2,7 +2,9 @@
   description = "OpenTritium";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-unstable";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,6 +35,15 @@
     };
     yazi.url = "github:sxyazi/yazi";
     zed-editor.url = "github:zed-industries/zed";
+    wpsFonts.url = "github:hypercrusher/wpsfonts";
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    windows-fonts = {
+      url = "github:lunaneff/nix-windows-fonts";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

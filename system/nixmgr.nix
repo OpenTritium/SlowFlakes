@@ -1,5 +1,7 @@
+{ pkgs, ... }:
 {
   nix = {
+    package = pkgs.nixVersions.git;
     gc = {
       automatic = true;
       options = "--delete-older-than 3d";
